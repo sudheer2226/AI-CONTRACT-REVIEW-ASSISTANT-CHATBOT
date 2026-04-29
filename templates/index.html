@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contract Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<body>
+
+    <h2>AI Contract Analyzer</h2>
+
+    <a href="/logout">Logout</a>
+    <a href="/about">About</a>
+
+    <hr>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" required><br><br>
+
+        <label>Select Language:</label>
+        <select name="language">
+            {% for key, value in languages.items() %}
+                <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+        <button type="submit">Analyze</button>
+    </form>
+
+    <hr>
+
+    <h3>Analysis Result:</h3>
+    <textarea rows="15" cols="100">{{ analysis }}</textarea>
+
+    <form action="/download" method="POST">
+        <input type="hidden" name="analysis_content" value="{{ analysis }}">
+        <button type="submit">Download</button>
+    </form>
+
+    <hr>
+
+    <h3>Ask Questions</h3>
+    <input type="text" id="question" placeholder="Ask something...">
+    <button onclick="ask()">Ask</button>
+
+    <p id="answer"></p>
+
+   <script>
+function ask() {
+    fetch("/ask", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            question: document.getElementById("question").value,
+            contract_text: `{{ contract_text }}`,
+            language: document.querySelector("select[name='language']").value
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        document.getElementById("answer").innerText = data.answer;
+    });
+}
+</script>
+</body>
+</html>

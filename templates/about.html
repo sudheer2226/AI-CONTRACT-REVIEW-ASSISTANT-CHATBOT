@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About | AI Contract Analyzer</title>
+
+    <!-- ✅ Correct CSS Path -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="dark-bg">
+
+<div class="box">
+
+    <h1 class="title">⚖️ AI Legal Contract Analyzer</h1>
+
+    <p class="subtitle">
+        Simplifying complex legal contracts using Artificial Intelligence
+    </p>
+
+    <hr>
+
+    <h2>📌 What is this application?</h2>
+    <p>
+        This web application helps users understand legal contracts easily.
+        Instead of reading long and complex legal documents, users can upload
+        their contract and get a clear, simple explanation instantly.
+    </p>
+
+    <h2>⚙️ How does it work?</h2>
+    <ul>
+        <li>User registers and logs in securely</li>
+        <li>Uploads a contract (PDF / DOCX / TXT)</li>
+        <li>Selects preferred language</li>
+        <li>AI analyzes the contract</li>
+        <li>Shows risks, responsibilities, payments & termination clauses</li>
+        <li>User can ask questions and download the analysis</li>
+    </ul>
+
+    <h2>🧠 Technologies Used</h2>
+    <ul>
+        <li><b>Frontend:</b> HTML, CSS, JavaScript</li>
+        <li><b>Backend:</b> Python Flask</li>
+        <li><b>Database:</b> SQLite</li>
+        <li><b>AI Model:</b> LegalBERT + AI Generator</li>
+        <li><b>Security:</b> Password Hashing, Sessions</li>
+    </ul>
+
+    <h2>🎯 Why this project?</h2>
+    <p>
+        Legal documents are difficult for common people to understand.
+        This project bridges the gap between legal language and users,
+        making contract understanding simple, fast, and accessible.
+    </p>
+
+    <br>
+
+    <a href="{{ url_for('index') }}" class="button">⬅ Back to Dashboard</a>
+
+</div>
+
+<!-- ✅ Correct JS Path -->
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

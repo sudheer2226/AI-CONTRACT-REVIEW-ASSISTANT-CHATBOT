@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+</head>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+<body>
+    <h2>Register</h2>
+
+    <form method="POST" autocomplete="off">
+    
+    <input type="text" name="username" placeholder="Choose Username" autocomplete="off" required><br><br>
+
+    <input type="password" name="password" placeholder="Create Password" autocomplete="new-password" required><br><br>
+
+    <button type="submit">Register</button>
+
+</form>
+
+    <p style="color:red;">{{ message }}</p>
+
+    <p>Already have an account? <a href="/login">Login</a></p>
+</body>
+</html>
