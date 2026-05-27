@@ -53,3 +53,5 @@ AI-CONTRACT-REVIEW-ASSISTANT-CHATBOT/
 │── requirements.txt
 └── README.md
 ```
+## 👤 Author
+**Sudheer Kumar Chukkala** | [LinkedIn](https://linkedin.com/in/sudheer-kumar-chukkala)
